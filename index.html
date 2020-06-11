@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+iframe {
+  width: 90%;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+</style>
+<script type="module">
+window.addIFrame = function (href) {
+  const div = document.createElement('div')
+  document.body.appendChild(div)
+
+  const a = document.createElement('a')
+  a.href = href
+
+  var src;
+  if (
+    a.hostname.includes('youtube.com')
+  ) {
+    if (a.pathname.includes('watch')) {
+        src = `${a.protocol}//www.youtube.com/embed/${a.search.substr(3)}`
+    } else if (a.pathname.includes('embed')) {
+        src = href
+    }
+  } else if (
+    a.hostname.includes('youtu.be')
+  ) {
+    src = `${a.protocol}//www.youtube.com/embed/${a.pathname}`
+  } else if (
+    a.hostname.includes('soundcloud')
+  ) {
+    console.log('soundcloud - make sure to use the embed thing in FF and pasteIFrame !')
+  } else if (
+    a.hostname.includes('bandcamp')
+  ) {
+    // this works, but could do better
+    src = href
+  }
+  console.log(src)
+
+  if (src) {
+    div.innerHTML = `<iframe src="${src}"></iframe>`
+  } else {
+    console.error('ERROR', src)
+  }
+};
+
+window.pasteIFrame = function(iframe) {
+  const div = document.createElement('div')
+  document.body.appendChild(div)
+  div.innerHTML = iframe
+}
+</script>
+</head>
+<body>
+    <!-- iframes go here -->
+</body>
+</html>
