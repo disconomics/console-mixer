@@ -1,7 +1,9 @@
 # console-mixer
 
 No-nonsense utility converting youtube/soundcloud/bandcamp links to iframes via
-the browser console, _as used during Disconomics' quarantine series_.
+the browser console, [_as used during Disconomics' quarantine series_](https://www.mixcloud.com/disconomics/).
+
+![demo](demo.gif)
 
 ## How to run this thing
 
@@ -27,8 +29,6 @@ $ python3 -m http.server 9999
 - open console (e.g with `<ctrl-alt-j>`)
 - use `addIFrame` and/or `pasteIFrame` to add content
 - start mixing !
-
-![demo](demo.gif)
 
 ## License
 
