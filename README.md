@@ -5,6 +5,13 @@ the browser console, _as used during Disconomics' quarantine series_.
 
 ## How to run this thing
 
+- Go to https://disconomics.xyz/console-mixer/
+- open console (e.g with `<ctrl-alt-j>`)
+- use `addIFrame` and/or `pasteIFrame` to add content
+- start mixing !
+
+## How to run this thing locally
+
 - `git clone` this repo, `cd` into it
 - boot up server e.g.
 
